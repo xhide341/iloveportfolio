@@ -18,7 +18,7 @@ export default function ButtonCopy({ command }: { command: string }) {
 async function copyToClipboard(c: string) {
   try {
     await navigator?.clipboard?.writeText(c);
-    toast("Copy to clipboard")
+    toast("Command line copied")
   } catch (e) {
     console.error(e);
   }

@@ -4,6 +4,11 @@ import { Download } from "lucide-react";
 
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardFooter } from "~/components/ui/card";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "~/components/ui/hover-card";
 import ButtonCopy from "~/components/results/button/button-copy";
 
 export default function ResultsPage() {
@@ -81,7 +86,9 @@ export default function ResultsPage() {
               <Card className="flex flex-col items-center justify-center gap-10">
                 <CardContent className="flex flex-col gap-2 text-center">
                   <h4 className="text-2xl font-medium">{item.step}</h4>
-                  <span className="whitespace-pre"><Markdown>{item.instructions}</Markdown></span>
+                  <span className="whitespace-pre">
+                    <Markdown>{item.instructions}</Markdown>
+                  </span>
                 </CardContent>
                 <CardFooter className="flex w-full flex-col px-28">
                   {/* =====Checks if the item contains commandLine or notes===== */}
@@ -90,7 +97,12 @@ export default function ResultsPage() {
                       <span>
                         <pre className="whitespace-pre">{item.commandLine}</pre>
                       </span>
-                      <ButtonCopy command={item.commandLine} />
+                      <HoverCard>
+                        <HoverCardTrigger>
+                          <ButtonCopy command={item.commandLine} />
+                        </HoverCardTrigger>
+                        <HoverCardContent side="top">Copy to Clipboard</HoverCardContent>
+                      </HoverCard>
                     </div>
                   ) : (
                     <Markdown>{item.notes}</Markdown>

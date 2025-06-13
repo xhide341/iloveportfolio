@@ -25,12 +25,12 @@ export default function ResultsPage() {
     {
       step: "Step 2",
       instructions:
-        "Go to your GitHub account and create a repository named username.github.io where username is the username of your GitHub account",
+        "Go to your GitHub account and create a repository named *username*.github.io\n where *username* is the username of your GitHub account",
     },
     {
       step: "Step 3",
       instructions:
-        "On your desktop, navigate to the directory where you extracted your ZIP portfolio file and run this command on you terminal",
+        "On your desktop, navigate to the directory where you extracted\n your ZIP portfolio file and run this command on you terminal",
       commandLine: "~ $ git init",
     },
     {
@@ -50,8 +50,8 @@ export default function ResultsPage() {
     {
       step: "Step 6",
       instructions:
-        "Your portfolio website has been deployed. You can view it via https://username.github.io",
-      notes: "NOTE: It may take a few minutes for your website to be live",
+        "Your portfolio website has been deployed. You can view it via **https://*username*.github.io**",
+      notes: "*NOTE: It may take a few minutes for your website to be live*",
     },
   ];
 
@@ -62,8 +62,8 @@ export default function ResultsPage() {
           Your portfolio website is ready!
         </h1>
         <Button className="w-[125px] self-center">
-          {" "}
-          <Download /> Download{" "}
+          <Download />
+          Download
         </Button>
       </section>
 
@@ -81,19 +81,19 @@ export default function ResultsPage() {
               <Card className="flex flex-col items-center justify-center gap-10">
                 <CardContent className="flex flex-col gap-2 text-center">
                   <h4 className="text-2xl font-medium">{item.step}</h4>
-                  <Markdown>{item.instructions}</Markdown>
+                  <span className="whitespace-pre"><Markdown>{item.instructions}</Markdown></span>
                 </CardContent>
-                <CardFooter className="flex w-full flex-col items-start px-28">
+                <CardFooter className="flex w-full flex-col px-28">
                   {/* =====Checks if the item contains commandLine or notes===== */}
                   {item.commandLine ? (
-                    <div className="flex w-full flex-row justify-between rounded-md bg-[#EFF1F5] p-4">
+                    <div className="flex w-full flex-row items-start justify-between rounded-md bg-[#EFF1F5] p-4">
                       <span>
                         <pre className="whitespace-pre">{item.commandLine}</pre>
                       </span>
-                      <ButtonCopy command={item.commandLine}/>
+                      <ButtonCopy command={item.commandLine} />
                     </div>
                   ) : (
-                    <p className="self-center">{item.notes}</p>
+                    <Markdown>{item.notes}</Markdown>
                   )}
                 </CardFooter>
               </Card>

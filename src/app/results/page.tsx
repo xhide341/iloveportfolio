@@ -1,76 +1,56 @@
 import React from "react";
-import { Copy, Download } from "lucide-react";
+import Markdown from "react-markdown";
+import { Download } from "lucide-react";
 
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardFooter } from "~/components/ui/card";
+import ButtonCopy from "~/components/results/button/button-copy";
 
 export default function ResultsPage() {
   // NOTE: the "instructions" returns as an JSX components due to usecase where some of the string are styled
   // NOTE: some of the syntax contains {" "} due to prettier formatting
   type Steps = {
     step: string;
-    instructions: React.ReactNode;
-    commandLine?: string[];
+    instructions: string;
+    commandLine?: string;
     notes?: string;
   };
 
   const steps: Steps[] = [
     {
       step: "Step 1",
-      instructions: (
-        <p>
-          Download the ZIP file and extract it to your desired directory
-          destination
-        </p>
-      ),
+      instructions:
+        "Download the ZIP file and extract it to your desired directory destination",
     },
     {
       step: "Step 2",
-      instructions: (
-        <p>
-          Go to your GitHub account and create a repository named{" "}
-          <span className="italic">username.github.io</span>
-          <br /> where username is the username of your GitHub account
-        </p>
-      ),
+      instructions:
+        "Go to your GitHub account and create a repository named username.github.io where username is the username of your GitHub account",
     },
     {
       step: "Step 3",
-      instructions: (
-        <p>
-          On your desktop, navigate to the directory where you extracted your
-          <br /> ZIP portfolio file and run this command on you terminal
-        </p>
-      ),
-      commandLine: ["~ $ git init"],
+      instructions:
+        "On your desktop, navigate to the directory where you extracted your ZIP portfolio file and run this command on you terminal",
+      commandLine: "~ $ git init",
     },
     {
       step: "Step 4",
-      instructions: <p>Add all the files and add your first commit</p>,
-      commandLine: ["~ $ git add .", '~ $ git commit -m “first commit"'],
+      instructions: "Add all the files and add your first commit",
+      commandLine: "~ $ git add\n" + "~ $ git commit -m " + '"first commit"',
     },
     {
       step: "Step 5",
-      instructions: (
-        <p>Connect and push your portfolio through your GitHub repository</p>
-      ),
-      commandLine: [
-        "~ $ git remote add origin <your-repository>",
-        "~ $ git branch -M main",
-        "~ $ git push -u origin main",
-      ],
+      instructions:
+        "Connect and push your portfolio through your GitHub repository",
+      commandLine:
+        "~ $ git remote add origin <your-repository>\n" +
+        "~ $ git branch -M main\n" +
+        "~ $ git push -u origin main\n",
     },
     {
       step: "Step 6",
-      instructions: (
-        <p>
-          Your portfolio website has been deployed. You can view it
-          <br /> via{" "}
-          <span className="font-bold">
-            https://<span className="italic">username</span>.github.io
-          </span>
-        </p>
-      ),
+      instructions:
+        "Your portfolio website has been deployed. You can view it via https://username.github.io",
       notes: "NOTE: It may take a few minutes for your website to be live",
     },
   ];
@@ -101,23 +81,16 @@ export default function ResultsPage() {
               <Card className="flex flex-col items-center justify-center gap-10">
                 <CardContent className="flex flex-col gap-2 text-center">
                   <h4 className="text-2xl font-medium">{item.step}</h4>
-                  {item.instructions}
+                  <Markdown>{item.instructions}</Markdown>
                 </CardContent>
                 <CardFooter className="flex w-full flex-col items-start px-28">
                   {/* =====Checks if the item contains commandLine or notes===== */}
                   {item.commandLine ? (
                     <div className="flex w-full flex-row justify-between rounded-md bg-[#EFF1F5] p-4">
                       <span>
-                        {/* =====Loops through item.commandLine: string[]===== */}
-                        {Array.isArray(item.commandLine) &&
-                          item.commandLine.map((line, i) => (
-                            <React.Fragment key={i}>
-                              {line}
-                              <br />
-                            </React.Fragment>
-                          ))}
+                        <pre className="whitespace-pre">{item.commandLine}</pre>
                       </span>
-                      <Copy />
+                      <ButtonCopy command={item.commandLine}/>
                     </div>
                   ) : (
                     <p className="self-center">{item.notes}</p>

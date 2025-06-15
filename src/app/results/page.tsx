@@ -63,37 +63,39 @@ export default function ResultsPage() {
   return (
     <main className="pb-10">
       <section className="item-center flex h-dvh flex-col justify-center gap-5 pb-5">
-        <h1 className="text-center text-4xl font-bold">
+        <h1 className="text-latte-text dark:text-mocha-text text-center font-bold sm:text-3xl lg:text-4xl">
           Your portfolio website is ready!
         </h1>
-        <Button className="w-[125px] self-center">
+        <Button className="bg-latte-crust dark:bg-mocha-crust text-latte-text dark:text-mocha-text self-center sm:w-[100px] lg:w-[125px] lg:h-[50px]">
           <Download />
           Download
         </Button>
       </section>
 
       <section className="pt-20">
-        <h2 className="text-center text-4xl font-bold">
+        <h2 className="text-latte-text dark:text-mocha-text text-center font-bold lg:text-4xl">
           Steps to deploy in GitHubPages
         </h2>
-        <h3 className="pt-5 text-center text-2xl font-medium">Via Terminal</h3>
+        <h3 className="text-latte-text dark:text-mocha-text pt-5 text-center font-medium lg:text-2xl">
+          Via Terminal
+        </h3>
         {/* =====Ordered Lists of Steps===== */}
         <ol className="flex flex-col gap-5 pt-10">
           {/* =====Mapping the Steps===== */}
           {steps.map((item, index) => (
             <li key={index}>
               {/* ======Card Component from shadcn===== */}
-              <Card className="flex flex-col items-center justify-center gap-10">
+              <Card className="bg-latte-mantle dark:bg-mocha-mantle text-latte-text dark:text-mocha-text flex flex-col items-center justify-center gap-10 border-0 shadow-none">
                 <CardContent className="flex flex-col gap-2 text-center">
-                  <h4 className="text-2xl font-medium">{item.step}</h4>
+                  <h4 className="font-medium lg:text-2xl">{item.step}</h4>
                   <span className="whitespace-pre">
                     <Markdown>{item.instructions}</Markdown>
                   </span>
                 </CardContent>
-                <CardFooter className="flex w-full flex-col px-28">
+                <CardFooter className="flex w-full flex-col px-20">
                   {/* =====Checks if the item contains commandLine or notes===== */}
                   {item.commandLine ? (
-                    <div className="flex w-full flex-row items-start justify-between rounded-md bg-[#EFF1F5] p-4">
+                    <div className="bg-mocha-base dark:bg-latte-base text-mocha-text dark:text-latte-text flex w-full flex-row items-start justify-between rounded-md p-4">
                       <span>
                         <pre className="whitespace-pre">{item.commandLine}</pre>
                       </span>
@@ -101,7 +103,9 @@ export default function ResultsPage() {
                         <HoverCardTrigger>
                           <ButtonCopy command={item.commandLine} />
                         </HoverCardTrigger>
-                        <HoverCardContent side="top">Copy to Clipboard</HoverCardContent>
+                        <HoverCardContent side="top">
+                          Copy to Clipboard
+                        </HoverCardContent>
                       </HoverCard>
                     </div>
                   ) : (

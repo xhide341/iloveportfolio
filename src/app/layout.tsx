@@ -19,9 +19,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>    
-      <body className="flex min-h-dvh flex-col items-center justify-center gap-5">      
-        <Header />        
+    <html lang="en" className={`${geist.variable}`}>
+      <body className="flex min-h-dvh flex-col items-center justify-center gap-5 bg-latte-base dark:bg-mocha-base">
+        <Header />
         {children}
       </body>
     </html>

@@ -4,8 +4,22 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* CUSTOM THEME: This is to prevent any merging conflicts, you can remove this line */
+@theme {
+  --color-latte-base: hsl(220deg, 23%, 95%);
+  --color-latte-mantle: hsl(220deg, 22%, 92%);
+  --color-latte-crust: hsl(220deg, 21%, 89%);
+  --color-latte-text: hsl(234deg, 16%, 35%);
+
+  --color-mocha-base: hsl(240deg, 21%, 15%);
+  --color-mocha-mantle: hsl(240deg, 21%, 12%);
+  --color-mocha-crust: hsl(240deg, 23%, 9%);
+  --color-mocha-text: hsl(226deg, 64%, 88%);
 }
 
 @theme inline {
@@ -119,6 +133,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

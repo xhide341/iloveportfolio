@@ -8,7 +8,7 @@ import { toast } from "sonner";
 
 export default function ButtonCopy({ command }: { command: string }) {
   return (
-    <Button variant="ghost" onClick={() => copyToClipboard(command)}>
+    <Button variant="ghost" className="hover:bg-inherit" onClick={() => copyToClipboard(command)}>
       <Copy />
       <Toaster />
     </Button>

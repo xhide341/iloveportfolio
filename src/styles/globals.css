@@ -4,8 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    "Roboto", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 @theme inline {
@@ -48,7 +49,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #eff1f5;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -79,10 +80,16 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --latte-text: #4c4f69;
+  --latte-subtext: #6c6f85;
+  --latte-base: #eff1f5;
+  --latte-surface: #ccd0da;
+  --latte-overlay: #9ca0b0;
+  --latte-text-rgb: 76, 79, 105;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: #1e1e2e;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -113,6 +120,12 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --latte-text: #cdd6f4;
+  --latte-subtext: #a6adc8;
+  --latte-base: #1e1e2e;
+  --latte-surface: #313244;
+  --latte-overlay: #6c7086;
+  --latte-text-rgb: 205, 214, 244;
 }
 
 @layer base {

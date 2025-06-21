@@ -59,14 +59,13 @@ export default function ResultsPage() {
       notes: "*NOTE: It may take a few minutes for your website to be live*",
     },
   ];
-
-  return (
+return (
     <main className="px-4 pb-8 md:px-6 lg:px-8">
       <section className="item-center flex h-dvh flex-col justify-center gap-5 pb-2 md:pb-2.5 lg:pb-5">
         <h1 className="text-latte-text dark:text-mocha-text text-center text-2xl font-bold md:text-3xl lg:text-4xl">
           Your portfolio website is ready!
         </h1>
-        <Button className="bg-latte-text dark:bg-mocha-text text-latte-base dark:text-mocha-text p-5 w-[100px] self-center lg:w-[125px]">
+        <Button className="bg-latte-text dark:bg-mocha-text text-latte-base dark:text-mocha-base p-5 w-[100px] self-center lg:w-[125px]">
           <Download />
           Download
         </Button>

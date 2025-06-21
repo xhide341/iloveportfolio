@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
+import Header from "~/components/header";
 
 export const metadata: Metadata = {
   title: "iloveportfolio",
@@ -19,8 +20,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-        <Header />
       <body className="flex min-h-dvh flex-col items-center justify-center">
+        <Header />
         {children}
       </body>
     </html>

@@ -11,10 +11,10 @@ type Props = {
 
 export default function UserCard(props: Props) {
   return (
-    <Card>
+    <Card className="shadow-none border-none p-7 flex-1 bg-latte-crust dark:bg-mocha-crust text-latte-text dark:text-mocha-text">
       <CardContent>
-        <Link href={props.link}>
-          <Image src={props.imageUrl} alt={props.imageUrl} width={250} height={250}/>
+        <Link href={props.link} className="flex flex-col items-center gap-5">
+          <Image src={props.imageUrl} alt={props.imageUrl} width={100} height={100} className="rounded-[50%]" />
           <p>{props.username}</p>
         </Link>
       </CardContent>

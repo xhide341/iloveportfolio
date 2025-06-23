@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link"
+
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "./ui/button";
 
@@ -27,7 +29,7 @@ const Header = () => {
                   Styles
                 </li>
                 <li className="cursor-pointer hover:text-[var(--latte-subtext)]">
-                  Contributors
+                  <Link href="/contributors"> Contributors</Link> 
                 </li>
               </ul>
             </div>

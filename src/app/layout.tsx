@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import Header from "~/components/header";
+import ThemeToggle from "~/components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "iloveportfolio",
@@ -23,6 +24,8 @@ export default function RootLayout({
       <body className="flex min-h-dvh flex-col items-center justify-center">
         <Header />
         {children}
+
+        <ThemeToggle />
       </body>
     </html>
   );

@@ -32,7 +32,7 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className="absolute right-8 bottom-8 cursor-pointer"
+      className="fixed right-8 bottom-8 cursor-pointer"
       onClick={toggleTheme}
     >
       {theme === "dark" ? (

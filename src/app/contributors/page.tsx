@@ -94,6 +94,7 @@ export default function ContributorsPage() {
               imageUrl={item.imageUrl}
               link={item.link}
               username={item.username}
+              role={item.role}
             />
           ))}
         </section>

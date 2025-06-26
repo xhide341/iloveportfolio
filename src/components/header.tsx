@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link"
+import Link from "next/link";
 
 import ThemeToggle from "./ThemeToggle";
 import { Button } from "./ui/button";
@@ -12,12 +12,14 @@ const Header = () => {
         <div className="flex w-full max-w-[1200px] items-center justify-between">
           <div className="flex w-full items-center">
             <div className="w-[20%] min-w-[120px]">
-              <h1 className="flex text-lg font-bold text-[var(--latte-text)]">
-                ilove{" "}
-                <span className="text-lg font-bold text-[var(--latte-subtext)]">
-                  portfolio
-                </span>
-              </h1>
+              <Link href="/">
+                <h1 className="flex text-lg font-bold text-[var(--latte-text)]">
+                  ilove{" "}
+                  <span className="text-lg font-bold text-[var(--latte-subtext)]">
+                    portfolio
+                  </span>
+                </h1>
+              </Link>
             </div>
 
             <div className="hidden lg:flex lg:w-[25%]">
@@ -29,7 +31,7 @@ const Header = () => {
                   Styles
                 </li>
                 <li className="cursor-pointer hover:text-[var(--latte-subtext)]">
-                  <Link href="/contributors"> Contributors</Link> 
+                  <Link href="/contributors"> Contributors</Link>
                 </li>
               </ul>
             </div>

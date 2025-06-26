@@ -19,7 +19,7 @@ export default function ContributorsPage() {
     {
       link: "https://github.com/xhide341",
       imageUrl: "/contributors/hide.jpeg",
-      username: "hide",
+      username: "xhide341",
       role: "Back-end Developer",
     },
   ];

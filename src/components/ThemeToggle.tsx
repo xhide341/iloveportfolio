@@ -32,7 +32,7 @@ const ThemeToggle = () => {
 
   return (
     <button
-      className="fixed right-8 bottom-8 cursor-pointer"
+      className="cursor-pointer text-[var(--latte-text)] transition hover:opacity-80"
       onClick={toggleTheme}
     >
       {theme === "dark" ? (

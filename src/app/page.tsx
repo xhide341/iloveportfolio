@@ -1,19 +1,14 @@
-import Drag from "~/components/drag";
-import Selectors from "~/components/selectors";
-import ThemeModal from "~/components/modal/themeModal";
-import StyleModal from "~/components/modal/styleModal";
+import { redirect } from "next/navigation";
+import { headers } from "next/headers";
+import { auth } from "~/lib/auth";
 
-export default function HomePage() {
-  return (
-    <main className="h-full w-full bg-[var(--latte-base)]">
-      <Drag />
-
-      <div className="flex justify-center">
-        <Selectors
-          themesTrigger={<ThemeModal />}
-          styleTrigger={<StyleModal />}
-        />
-      </div>
-    </main>
-  );
+export default async function MainPage() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  if (!session) {
+    redirect("/login");
+  } else {
+    redirect("/home");
+  }
 }

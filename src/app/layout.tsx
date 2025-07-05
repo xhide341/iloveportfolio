@@ -5,7 +5,6 @@ import { Geist } from "next/font/google";
 import Header from "~/components/header";
 import ThemeToggle from "~/components/ThemeToggle";
 
-
 export const metadata: Metadata = {
   title: "iloveportfolio",
   description: "Generate resume pdf to portfolio website.",
@@ -23,10 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body className="flex min-h-dvh flex-col items-center justify-center">
-        <Header />
         {children}
-
-        <ThemeToggle />
       </body>
     </html>
   );
